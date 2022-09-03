@@ -5,7 +5,6 @@ import utils.UserInput;
 import java.math.BigDecimal;
 
 import static utils.UpdateRecord.editRecord;
-import static utils.VerifyCreateCustomer.newCustomer;
 
 public class Deposit {
 

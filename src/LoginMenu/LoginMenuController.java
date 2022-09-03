@@ -13,7 +13,7 @@ public class LoginMenuController {
 
         UserInput input = new UserInput();
 
-        VerifyCreateCustomer Login = new VerifyCreateCustomer();
+        VerifyLogin Login = new VerifyLogin();
         public LoginMenuController(LoginMenuModel model, LoginMenuView view) {
             this.model = model;
             this.view = view;
@@ -25,7 +25,8 @@ public class LoginMenuController {
             String userName = input.readText();
             view.printUserPassPrompt();
             String password = input.readText();
-            boolean isValidLogin = Login.verifyLogin(userName,password);
+            String encryptPassword = Encryptor.encryptPassword(password);
+            boolean isValidLogin = Login.verifyLogin(userName,encryptPassword);
             if (isValidLogin) {
                 Customer newCustomer = Login.returnCustomer();
                 model.handleOption(newCustomer);

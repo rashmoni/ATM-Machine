@@ -6,12 +6,14 @@ public class Customer {
 
     private String username;
     private String password;
+    private String accNumber;
     private String fullName;
     private BigDecimal balance;
 
-    public Customer(String username, String password, String fullName, BigDecimal balance) {
+    public Customer(String accNumber, String username, String password, String fullName, BigDecimal balance) {
         this.username = username;
         this.password = password;
+        this.accNumber = accNumber;
         this.fullName = fullName;
         this.balance = balance;
     }
@@ -24,6 +26,9 @@ public class Customer {
         return password;
     }
 
+    public String getAccNumber() {
+        return accNumber;
+    }
     public String getFullName() {
         return fullName;
     }
@@ -42,6 +47,6 @@ public class Customer {
 
     @Override
     public String toString(){
-        return username+","+password+","+fullName+","+balance;
+        return accNumber+","+username+","+password+","+fullName+","+balance;
     }
 }

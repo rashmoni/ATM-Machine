@@ -2,6 +2,10 @@ package utils;
 
 import Customer.Customer;
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.Scanner;
 
 public class UpdateRecord {
@@ -18,7 +22,7 @@ public class UpdateRecord {
             BufferedWriter bw = new BufferedWriter(fw);
             PrintWriter pw = new PrintWriter(bw);
             scanner= new Scanner(new File(filepath));
-            String editTerm = customer.getUsername();
+            String editTerm = customer.getAccNumber();
             String updatedText = customer.toString();
 
             while (scanner.hasNextLine()){
@@ -41,4 +45,18 @@ public class UpdateRecord {
             throw new RuntimeException(e);
         }
     }
-}
+
+    public static void addNewRecord(Customer newCustomer) {
+            String filePath = "assets/details.txt";
+            String textToSave = newCustomer.toString();
+            Path file = Paths.get(filePath);
+            byte[] data = (textToSave + System.lineSeparator()).getBytes();
+
+            try {
+                Files.write(file, data, StandardOpenOption.APPEND);
+            }
+            catch (IOException e)  {
+                throw new RuntimeException(e);
+            }
+        }
+    }

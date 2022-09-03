@@ -52,21 +52,5 @@ public class UserInput {
         in.nextLine();
     }
 
-    public String slectIngType(String promptMsg){
-        String strInput;
-        System.out.print(promptMsg);
-        strInput = in.nextLine();
-        boolean validInput = (!strInput.equalsIgnoreCase("kg")) && (!strInput.equalsIgnoreCase("l")) && (!strInput.equalsIgnoreCase("pc"));
-
-        while (validInput){
-            System.out.print("\u26A0 Invalid Entry, Please enter valid search value :");
-            strInput = in.nextLine();
-            if ((strInput.equalsIgnoreCase("kg")) || (strInput.equalsIgnoreCase("l")) || (strInput.equalsIgnoreCase("pc"))){
-                validInput = false;
-            }
-
-        }
-        return strInput.trim();
-    }
 
 }
