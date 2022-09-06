@@ -4,7 +4,7 @@ import Customer.Customer;
 import utils.UserInput;
 import CustomerMenu.*;
 
-import static utils.UpdateRecord.editRecord;
+import static utils.FileWriter.editRecord;
 
 public class ChangeUsername {
     public ChangeUsername(Customer newCustomer){

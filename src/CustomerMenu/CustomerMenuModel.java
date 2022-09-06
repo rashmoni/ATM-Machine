@@ -27,7 +27,7 @@ public class CustomerMenuModel {
             case 2 -> new Deposit(newCustomer);
             case 3 -> new Withdraw(newCustomer);
             case 4 -> new ChangeUsername(newCustomer);
-            case 5 -> new Changepassword(newCustomer);
+            case 5 -> new ChangePassword(newCustomer);
             case 6->  new Transfer();
             default -> throw new IndexOutOfBoundsException();
         }

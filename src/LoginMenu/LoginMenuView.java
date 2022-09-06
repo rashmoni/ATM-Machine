@@ -1,12 +1,12 @@
 package LoginMenu;
 
-import utils.PrintHandler;
+import utils.MenuPrintHandler;
 
 
 public class LoginMenuView {
     public LoginMenuView() {
-        PrintHandler.clearScreen();
-        PrintHandler.appTitle();
+        MenuPrintHandler.clearScreen();
+        MenuPrintHandler.appTitle();
     }
 
     public void printUserNamePrompt() {

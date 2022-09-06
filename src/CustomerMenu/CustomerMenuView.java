@@ -1,19 +1,19 @@
 package CustomerMenu;
 
 import Customer.Customer;
-import utils.PrintHandler;
+import utils.MenuPrintHandler;
 
 import java.util.List;
 
 public class CustomerMenuView {
 
     public CustomerMenuView(List<String> customerMenuOptions, Customer newCustomer) {
-        PrintHandler.clearScreen();
-        PrintHandler.appTitle();
+        MenuPrintHandler.clearScreen();
+        MenuPrintHandler.appTitle();
         System.out.println("Welcome: " + newCustomer.getFullName());
         System.out.println("Customer menu options:");
-        PrintHandler.printOptionList(customerMenuOptions);
-        PrintHandler.goBack();
+        MenuPrintHandler.printOptionList(customerMenuOptions);
+        MenuPrintHandler.goBack();
         printUserPrompt();
     }
     public void printInvalidOption() {

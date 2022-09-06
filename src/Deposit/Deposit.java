@@ -4,7 +4,7 @@ import Customer.Customer;
 import utils.UserInput;
 import java.math.BigDecimal;
 
-import static utils.UpdateRecord.editRecord;
+import static utils.FileWriter.editRecord;
 
 public class Deposit {
 

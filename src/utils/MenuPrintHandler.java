@@ -4,9 +4,9 @@ package utils;
 import java.io.IOException;
 import java.util.List;
 
-public class PrintHandler {
+public class MenuPrintHandler {
     public static void appTitle() {
-        System.out.println("=== ATM Machime ==="+"\n");
+        System.out.println("=== ATM Machime ===" + "\n");
     }
 
     public static void goBack() {
@@ -18,8 +18,7 @@ public class PrintHandler {
 
         if (OperatingSystem.equals("Windows")) {
             clearScreenWindows();
-        }
-        else {
+        } else {
             clearScreenUnix();
         }
     }
@@ -32,19 +31,6 @@ public class PrintHandler {
             System.out.println("[" + number + "] " + label);
         }
     }
-
-    public static void pintList(List<String> options) {
-        for (int index = 0; index < options.size(); index++) {
-            int number = index + 1;
-            String label = options.get(index);
-            System.out.println( number+ ". " + label);
-        }
-    }
-
-
-
-
-
 
     private static void clearScreenUnix() {
         String clearScreenASCIICode = "\033[H\033[2J";

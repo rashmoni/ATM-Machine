@@ -7,17 +7,16 @@ import java.util.List;
 import java.util.Scanner;
 
 public class FileReader {
-
+    private static String filepath = "assets/details.txt";
     public static List<String> readTextFile() {
         List<String> result = new ArrayList<>();
         try {
-            File textFile = new File("assets/details.txt");
+            File textFile = new File(filepath);
             Scanner scanner = new Scanner(textFile);
             while (scanner.hasNextLine()) {
                 result.add(scanner.nextLine());
             }
-        }
-        catch (FileNotFoundException e) {
+        } catch (FileNotFoundException e) {
             System.out.println("File not present");
         }
         return result;

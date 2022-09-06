@@ -46,38 +46,37 @@ public class UserInput {
     public String passwordReader(String type) {
         Console console = System.console();
         String userPassword;
-        if (console!=null) {
+        if (console != null) {
             userPassword = consolePasswordReader(type);
-        }
-        else {
+        } else {
             userPassword = terminalPasswordReader(type);
         }
         return userPassword;
     }
 
-    private String consolePasswordReader(String type){
+    private String consolePasswordReader(String type) {
         char[] passwordChars;
         String passwordString;
         char[] rePasswordChars;
         String rePasswordString;
 
         Console console = System.console();
-        if (type.equalsIgnoreCase("login")){
+        if (type.equalsIgnoreCase("login")) {
             console.printf("Please enter your password: ");
             passwordChars = console.readPassword();
             passwordString = new String(passwordChars);
             return passwordString;
         } else {
-            console.printf("Please enter your password: ");
+            console.printf("Please enter new password: ");
             passwordChars = console.readPassword();
             passwordString = new String(passwordChars);
             console.printf("Re-Enter the password: ");
             rePasswordChars = console.readPassword();
             rePasswordString = new String(rePasswordChars);
-            while (!passwordString.equals(rePasswordString) || (passwordString.length()<6)) {
+            while (!passwordString.equals(rePasswordString) || (passwordString.length() < 6)) {
                 console.printf("Password does match/ Less than 6 characters");
-                console.printf("\n"+"Please try again:");
-                console.printf("Please enter your password: ");
+                console.printf("\n" + "Please try again:");
+                console.printf("Please enter new password: ");
                 passwordChars = console.readPassword();
                 passwordString = new String(passwordChars);
                 console.printf("Re-Enter the password: ");
@@ -85,14 +84,12 @@ public class UserInput {
                 rePasswordString = new String(rePasswordChars);
             }
             return passwordString;
-    }
+        }
     }
 
     //for intelliJ
     private String terminalPasswordReader(String type) {
-        char[] passwordChars;
         String passwordString;
-        char[] rePasswordChars;
         String rePasswordString;
 
         if (type.equalsIgnoreCase("login")) {
@@ -100,14 +97,14 @@ public class UserInput {
             passwordString = in.nextLine();
             return passwordString;
         } else {
-            System.out.print("Please enter your password: ");
+            System.out.print("Please enter new password: ");
             passwordString = in.nextLine();
             System.out.print("Re-Enter the password: ");
             rePasswordString = in.nextLine();
-            while (!passwordString.equals(rePasswordString) || (passwordString.length()<6)) {
+            while (!passwordString.equals(rePasswordString) || (passwordString.length() < 6)) {
                 System.out.println("Password does not match (or) Less than 6 characters");
                 System.out.println("Please try again: ");
-                System.out.print("Please enter your password: ");
+                System.out.print("Please enter new password: ");
                 passwordString = in.nextLine();
                 System.out.print("Re-Enter the password: ");
                 rePasswordString = in.nextLine();

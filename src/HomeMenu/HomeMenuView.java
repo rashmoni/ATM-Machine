@@ -5,10 +5,10 @@ import utils.*;
 
 public class HomeMenuView {
     public HomeMenuView(List<String> HomeMenuOptions) {
-        PrintHandler.clearScreen();
-        PrintHandler.appTitle();
+        MenuPrintHandler.clearScreen();
+        MenuPrintHandler.appTitle();
         System.out.println("Home menu options:");
-        PrintHandler.printOptionList(HomeMenuOptions);
+        MenuPrintHandler.printOptionList(HomeMenuOptions);
         printUserPrompt();
     }
 

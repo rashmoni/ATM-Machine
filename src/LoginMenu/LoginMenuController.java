@@ -2,22 +2,15 @@ package LoginMenu;
 
 import Customer.Customer;
 import utils.*;
-import java.io.IOException;
-import java.util.Scanner;
 
 public class LoginMenuController {
-
         private final LoginMenuView view;
         private final LoginMenuModel model;
-        private final Scanner scanner;
-
         UserInput input = new UserInput();
-
-        VerifyLogin Login = new VerifyLogin();
+        CustomerReader reader = new CustomerReader();
         public LoginMenuController(LoginMenuModel model, LoginMenuView view) {
             this.model = model;
             this.view = view;
-            this.scanner = new Scanner(System.in);
         }
 
         public void requestUserInput() {
@@ -25,10 +18,9 @@ public class LoginMenuController {
             String userName = input.readText();
             String password = input.passwordReader("login");
             String encryptPassword = Encryptor.encryptPassword(password);
-            boolean isValidLogin = Login.verifyLogin(userName,encryptPassword);
-            if (isValidLogin) {
-                Customer newCustomer = Login.returnCustomer();
-                model.handleOption(newCustomer);
+            Customer customer = reader.getCustomer(userName,encryptPassword);
+            if(customer!=null){
+                model.handleOption(customer);
             }
             else {
                 view.printInvalidCred();

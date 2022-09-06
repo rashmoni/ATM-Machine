@@ -3,7 +3,7 @@ package SignupMenu;
 import Customer.Customer;
 import utils.Encryptor;
 import utils.GenerateAccNum;
-import utils.UpdateRecord;
+import utils.FileWriter;
 import utils.UserInput;
 import CustomerMenu.*;
 import java.math.BigDecimal;
@@ -32,7 +32,7 @@ public class SignupMenuController {
 
         Customer newCustomer = new Customer(newAccountnumber,userID,encryptPassword,fullName,initialDeposit);
 
-        UpdateRecord.addNewRecord(newCustomer);
+        FileWriter.addNewRecord(newCustomer);
         view.regSuccessful();
         input.pressEnterContinue();
         new CustomerMenu(newCustomer);

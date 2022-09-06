@@ -5,7 +5,7 @@ import utils.UserInput;
 
 import java.math.BigDecimal;
 
-import static utils.UpdateRecord.editRecord;
+import static utils.FileWriter.editRecord;
 
 public class Withdraw {
     public Withdraw(Customer newCustomer){
