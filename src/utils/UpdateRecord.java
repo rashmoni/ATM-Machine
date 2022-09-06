@@ -6,6 +6,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
+import java.util.List;
 import java.util.Scanner;
 
 public class UpdateRecord {
@@ -47,16 +48,19 @@ public class UpdateRecord {
     }
 
     public static void addNewRecord(Customer newCustomer) {
-            String filePath = "assets/details.txt";
-            String textToSave = newCustomer.toString();
-            Path file = Paths.get(filePath);
-            byte[] data = (textToSave + System.lineSeparator()).getBytes();
+        String filePath = "assets/details.txt";
+        String textToSave = newCustomer.toString();
+        File file = new File(filePath);
 
-            try {
-                Files.write(file, data, StandardOpenOption.APPEND);
-            }
-            catch (IOException e)  {
-                throw new RuntimeException(e);
-            }
+        try {
+            FileWriter writer = new FileWriter(file, true);
+            PrintWriter dataOut = new PrintWriter(writer);
+            dataOut.print("\n"+textToSave);
+            dataOut.close();
+            writer.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
         }
     }

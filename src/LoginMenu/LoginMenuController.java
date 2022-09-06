@@ -20,11 +20,10 @@ public class LoginMenuController {
             this.scanner = new Scanner(System.in);
         }
 
-        public void requestUserInput() throws IOException {
+        public void requestUserInput() {
             view.printUserNamePrompt();
             String userName = input.readText();
-            view.printUserPassPrompt();
-            String password = input.readText();
+            String password = input.passwordReader("login");
             String encryptPassword = Encryptor.encryptPassword(password);
             boolean isValidLogin = Login.verifyLogin(userName,encryptPassword);
             if (isValidLogin) {

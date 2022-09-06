@@ -6,11 +6,11 @@ import java.util.List;
 
 
 public class VerifyLogin {
-    static List<String> allCustomers = FileReader.readTextFile();
+
     public static Customer newCustomer = null;
     public boolean verifyLogin(String userName, String password) {
         boolean isValidLogin = false;
-
+        List<String> allCustomers = FileReader.readTextFile();
         for (int index = 0; index < allCustomers.size(); index++) {
             String customer = allCustomers.get(index);
             List<String> customerDataList = FileReader.breakLineBySeparatorCharacter(customer, ",");
