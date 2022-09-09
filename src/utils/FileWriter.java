@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class FileWriter {
     private static Scanner scanner;
     private static String filepath = "assets/details.txt";
-    public static void editRecord(Customer customer) {
+    public static void updateRecord(Customer customer) {
         String tempFile = "temp.txt";
         File oldFile = new File(filepath);
         File newFile = new File(tempFile);

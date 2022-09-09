@@ -3,9 +3,11 @@ package utils;
 import Customer.Customer;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
 public class CustomerReader {
+
     public Customer getCustomer(String userName, String password) {
         Customer customer = null;
         List<String> allCustomers = FileReader.readTextFile();
@@ -30,5 +32,17 @@ public class CustomerReader {
             }
         }
         return transferCustomer;
+    }
+
+    public static List<String> getAllUserNames(String self) {
+        List<String> allUserNames = new ArrayList<>();
+        List<String> allCustomers = FileReader.readTextFile();
+        for (int index = 0; index < allCustomers.size(); index++) {
+            String customerString = allCustomers.get(index);
+            List<String> customerDataList = FileReader.breakLineBySeparatorCharacter(customerString, ",");
+            allUserNames.add(customerDataList.get(1));
+            }
+        allUserNames.remove(self);
+        return allUserNames;
     }
 }

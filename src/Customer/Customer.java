@@ -23,9 +23,6 @@ public class Customer {
     public String getUsername() {
         return username;
     }
-    public String getPassword() {
-        return password;
-    }
     public String getFullName() {
         return fullName;
     }
@@ -42,9 +39,7 @@ public class Customer {
         this.username = userName;
     }
     public void updatePassword(String password){
-        this.password = password;
-
-    }
+        this.password = password;}
     @Override
     public String toString(){
         return accNumber+","+username+","+password+","+fullName+","+balance;

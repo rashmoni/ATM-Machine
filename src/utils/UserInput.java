@@ -1,6 +1,8 @@
 package utils;
 
+
 import java.io.Console;
+import java.util.List;
 import java.util.Scanner;
 
 public class UserInput {
@@ -37,6 +39,17 @@ public class UserInput {
 
         while ((strInput.equals("") || (strInput.equals(" ")))) {
             System.out.print("\u26A0 Invalid Entry, Please enter value: ");
+            strInput = in.nextLine();
+            strInput.trim();
+        }
+        return strInput;
+    }
+
+    public String readUserID() {
+        String strInput = in.nextLine();
+        List<String> allUserNames = CustomerReader.getAllUserNames(" ");
+        while ((strInput.equals("") || (strInput.equals(" "))) || allUserNames.contains(strInput)) {
+            System.out.print("\u26A0 Invalid or duplicate entry, Please enter another value: ");
             strInput = in.nextLine();
             strInput.trim();
         }

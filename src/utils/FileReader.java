@@ -24,7 +24,6 @@ public class FileReader {
 
     public static List<String> breakLineBySeparatorCharacter(String line, String separatorCharacter) {
         List<String> result = List.of(line.split(separatorCharacter));
-
         return result;
     }
 }

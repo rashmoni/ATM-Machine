@@ -9,8 +9,12 @@ public class MenuPrintHandler {
         System.out.println("=== ATM Machime ===" + "\n");
     }
 
-    public static void goBack() {
+    public static void logOut() {
         System.out.println("[0] Logout");
+    }
+
+    public static void goBack() {
+        System.out.println("[0] Go Back");
     }
 
     public static void clearScreen() {

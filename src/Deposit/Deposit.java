@@ -1,22 +1,24 @@
 package Deposit;
 
 import Customer.Customer;
+import CustomerMenu.CustomerMenu;
+import utils.FileWriter;
 import utils.UserInput;
 import java.math.BigDecimal;
 
-import static utils.FileWriter.editRecord;
-
 public class Deposit {
-
-    public  Deposit(Customer newCustomer){
-        Customer customer = newCustomer;
+    public Deposit(Customer customer) {
         UserInput input = new UserInput();
         BigDecimal depoAmount;
-        depoAmount = BigDecimal.valueOf(input.readInteger("Please Enter amount you want to Deposit: ","Invalid Entry:",1, 1000000));
+        depoAmount = BigDecimal.valueOf(input.readInteger("Please Enter amount you want to Deposit: ", "Invalid Entry:", 1, 1000000));
         customer.depositeAmount(depoAmount);
-        System.out.println(customer.getBalance());
-        editRecord(newCustomer);
+        FileWriter.updateRecord(customer);
+        System.out.println("Amount " + depoAmount + " successfully deposited.");
+        System.out.println("Your updated balance is " + customer.getBalance());
+        input.pressEnterContinue();
+        new CustomerMenu(customer);
     }
-
-
 }
+
+
+

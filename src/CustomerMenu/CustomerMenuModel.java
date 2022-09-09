@@ -15,20 +15,19 @@ public class CustomerMenuModel {
     public List<String> getcustomerMenuOptions() {
         return customerMenuOptions;
     }
-
-    private Customer newCustomer;
-    public CustomerMenuModel(Customer newCustomer){
-     this.newCustomer = newCustomer;
+    private Customer customer;
+    public CustomerMenuModel(Customer customer){
+     this.customer = customer;
     }
     public void handleOption(int selectedOption) throws IndexOutOfBoundsException{
         switch (selectedOption) {
             case 0 -> new HomeMenu();
-            case 1 -> new ViewBalance(newCustomer);
-            case 2 -> new Deposit(newCustomer);
-            case 3 -> new Withdraw(newCustomer);
-            case 4 -> new ChangeUsername(newCustomer);
-            case 5 -> new ChangePassword(newCustomer);
-            case 6->  new Transfer();
+            case 1 -> new ViewBalance(customer);
+            case 2 -> new Deposit(customer);
+            case 3 -> new Withdraw(customer);
+            case 4 -> new ChangeUsername(customer);
+            case 5 -> new ChangePassword(customer);
+            case 6->  new TransferMenu(customer);
             default -> throw new IndexOutOfBoundsException();
         }
     }

@@ -3,7 +3,6 @@ package utils;
 import java.util.Random;
 
 public class GenerateAccNum {
-
     public static String generateAccNum() {
         String accountNum = "";
         Random rand = new Random();

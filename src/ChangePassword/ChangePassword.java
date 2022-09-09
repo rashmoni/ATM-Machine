@@ -5,14 +5,13 @@ import CustomerMenu.CustomerMenu;
 import utils.*;
 
 public class ChangePassword {
-    public ChangePassword(Customer newCustomer){
-        Customer customer = newCustomer;
+    public ChangePassword(Customer customer){
         UserInput input = new UserInput();
         String password = input.passwordReader("change");
         password = Encryptor.encryptPassword(password);
-        newCustomer.updatePassword(password);
-        FileWriter.editRecord(newCustomer);
+        customer.updatePassword(password);
+        FileWriter.updateRecord(customer);
         input.oprationSaveSuccess ();
-        new CustomerMenu(newCustomer);
+        new CustomerMenu(customer);
     }
 }

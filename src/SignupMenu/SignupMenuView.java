@@ -9,7 +9,7 @@ public class SignupMenuView {
         System.out.print("Please enter Full Name: ");
     }
 
-    public void userIDrompt() {
+    public void userIDprompt() {
         System.out.print("Please enter userid: ");
     }
 

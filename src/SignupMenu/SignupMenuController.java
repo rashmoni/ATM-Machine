@@ -23,8 +23,8 @@ public class SignupMenuController {
     public void requestUserInput() {
         view.userNameprompt();
         String fullName = input.readText();
-        view.userIDrompt();
-        String userID = input.readText();
+        view.userIDprompt();
+        String userID = input.readUserID();
         String password = input.passwordReader("signup");
         String encryptPassword = Encryptor.encryptPassword(password);
         String newAccountnumber = GenerateAccNum.generateAccNum();
