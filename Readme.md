@@ -20,9 +20,10 @@ Project is created with:
 
 ## Documents
 Project Management Documents: 
-- [Usecase Diagram](https://github.com/rashmoni/ATM-Machine/)
-- [Class Diagram](https://github.com/rashmoni/ATM-Machine)
-- [Usecases](https://github.com/rashmoni/ATM-Machine)
+- [Usecase Diagram](https://github.com/rashmoni/ATM-Machine/blob/main/ProjectManagement/ATM-Machine-UC-Diagram.pdf)
+- [Sequence Diagram](https://github.com/rashmoni/ATM-Machine/blob/main/ProjectManagement/ATM%20Sequence_Diagram.pdf)
+- [Class Diagram](https://github.com/rashmoni/ATM-Machine/blob/main/ProjectManagement/ATM-MachineClassDiagram.pdf)
+- [Usecases](https://github.com/rashmoni/ATM-Machine/blob/main/ProjectManagement/ATM-Machine_UsaCases.xlsx)
 
 ## Run
 To run this application do the following steps.
